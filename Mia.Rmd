@@ -1,7 +1,7 @@
 ---
 title: "OA-microbiome"
 author: "Li-Fang Yeo"
-date: "2024-08-28"
+date: "12 Dec 2024"
 output: html_document
 ---
 
@@ -15,12 +15,14 @@ library(tidyverse)
 library(dplyr)
 library(knitr)
 library(miaViz)
+library(ANCOMBC)
+library(Maaslin2)
 ```
 Data input 
 ```{r}
 meta <- read.csv("Metafile.csv", row.names = 1, header = TRUE)
-meta <- meta %>% mutate(Group = str_replace_all(Group,"Temiar", "A"))
-tse <- importMetaPhlAn("42_abund_fixed.txt", assay.type = "relabundance", col.data = meta, removeTaxaPrefixes = TRUE)
+#meta <- meta %>% mutate(Group = str_replace_all(Group,"Temiar", "A"))
+tse <- importMetaPhlAn("data/42_abund_fixed.txt", assay.type = "relabundance", col.data = meta, removeTaxaPrefixes = TRUE)
 tse
 ```
 ```{r}

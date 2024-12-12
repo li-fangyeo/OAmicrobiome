@@ -277,7 +277,21 @@ df %>%
   #DT::datatable(caption = "Group") 
   write.csv("./ancombc/temiar-ref/ancom-alt.csv")
 ```
+```{r}
+maaslin2_out <- Maaslin2(
+    input_data = as.data.frame(t(assay(tse_species_BC))),
+    input_metadata = meta,
+    output = "DAA example",
+    fixed_effects = "Group",
+    # you can also fit MLM by specifying random effects
+    # random_effects = c(...),
+    reference = "Group,Malay",
+    normalization = "TSS",
+    standardize = FALSE,
+    # filtering was previously performed
+    min_prevalence = 0)
 ```
+
 
 
 

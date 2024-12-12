@@ -14,7 +14,7 @@ library(dplyr)
 library(Maaslin2)
 ```
 ```{r}
-pw <- read_delim("subset_pathabundance-cpm.tsv", 
+pw <- read_delim("data/subset_pathabundance-cpm.tsv", 
      delim = "\t", escape_double = FALSE, 
      trim_ws = TRUE)
 ```
@@ -39,10 +39,10 @@ pw <- pw %>% rename(TM0123M = TM123M) %>%
 ```{r, echo=FALSE, message=FALSE}
 fit_func = Maaslin2(input_data     = pw, 
                     input_metadata = meta, 
-                    output         = "functionalJ", 
+                    output         = "functionalM", 
                     normalization = "NONE",
                     fixed_effects  = "Group",
-                    reference      = c("Group,Jahai"),
+                    reference      = c("Group,Malay"),
                     min_prevalence = 0.4,
                     min_abundance = 0.001)
 ```

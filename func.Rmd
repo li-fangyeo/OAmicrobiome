@@ -28,7 +28,11 @@ pw <- pw %>%
   filter(rowSums(across(where(is.numeric)))!=0) %>%
   #grep all Pathways that end with species
   filter(grepl('.s__', Pathway)) %>%
-  filter(!grepl('UNINTEGRATED|superpathway', Pathway))
+  #remove all unintegrated pathways
+  filter(!grepl('UNINTEGRATED|superpathway', Pathway)) %>%
+  #remove species associated pathway 
+  filter(!grepl('g__Blautia', Pathway)) %>%
+  filter(!grepl('g__Fusicatenibacter', Pathway)) 
 pw
 pw <- tibble::column_to_rownames(pw, var = "Pathway")  
 
@@ -39,7 +43,7 @@ pw <- pw %>% rename(TM0123M = TM123M) %>%
 ```{r, echo=FALSE, message=FALSE}
 fit_func = Maaslin2(input_data     = pw, 
                     input_metadata = meta, 
-                    output         = "functionalM", 
+                    output         = "functional_newM", 
                     normalization = "NONE",
                     fixed_effects  = "Group",
                     reference      = c("Group,Malay"),

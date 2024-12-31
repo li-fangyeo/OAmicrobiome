@@ -1,5 +1,5 @@
 # OA Microbiome
-The characterization of gut microbiome of Malaysian indigenous communities (Orang Asli) and an urban Malay cohort
+The characterization of gut microbiome and functional pathway activities of three Malaysian indigenous communities (Orang Asli), Jahai, Temiar, Temuan and an urban Malay cohort.
 
 
 ```

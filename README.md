@@ -8,4 +8,5 @@ Then func.Rmd holds the predicted pathway analysis, including prevalence filteri
 
 functionCircular.R has the code to produce the circular figure for pathway analysis. And table.R is just there for ease of producing publication-ready tables.
 
+AMR_scripts folder has all the codes for the resistome analysis, including counting ARG load and diversity, and ARG differential abundance analysis using linear models. 
 
